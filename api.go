@@ -107,7 +107,7 @@ func (c *Client) doRequest(r *http.Request, result interface{}) (*impart.Envelop
 }
 
 func (c *Client) prepareRequest(r *http.Request) {
-	r.Header.Add("User-Agent", "go-writeas v1")
+	r.Header.Add("User-Agent", c.Config.UserAgent)
 	r.Header.Add("Content-Type", "application/json")
 	if c.Token != "" {
 		r.Header.Add("Authorization", "Token "+c.Token)

@@ -15,11 +15,15 @@ type ClientConfig struct {
 
 	// Client making requests to the API
 	Client *http.Client
+
+	// User-Agent header value for all requests made
+	UserAgent string
 }
 
 func NewClientConfig() *ClientConfig {
 	return &ClientConfig{
-		BaseURL: "",
-		Client:  &http.Client{Timeout: defaultHTTPTimeout},
+		BaseURL:   "",
+		Client:    &http.Client{Timeout: defaultHTTPTimeout},
+		UserAgent: "go-as-api v1",
 	}
 }
