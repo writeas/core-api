@@ -20,10 +20,10 @@ type ClientConfig struct {
 	UserAgent string
 }
 
-func NewClientConfig() *ClientConfig {
+func NewClientConfig(baseURL, userAgent string) *ClientConfig {
 	return &ClientConfig{
-		BaseURL:   "",
+		BaseURL:   baseURL,
 		Client:    &http.Client{Timeout: defaultHTTPTimeout},
-		UserAgent: "go-as-api v1",
+		UserAgent: userAgent,
 	}
 }
