@@ -1,4 +1,4 @@
-module code.as/core/api
+module github.com/writeas/core-api
 
 go 1.13
 
